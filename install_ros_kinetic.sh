@@ -48,10 +48,10 @@ rosdep update
 sudo apt-get install -y python-rosinstall
 
 echo "[Make the catkin workspace and test the catkin_make]"
-mkdir -p ~/catkin_ws/src
-cd ~/catkin_ws/src
+mkdir -p ~/$name_catkin_workspace/src
+cd ~/$name_catkin_workspace/src
 catkin_init_workspace
-cd ~/catkin_ws/
+cd ~/$name_catkin_workspace
 catkin_make
 
 echo "[Set the ROS evironment]"
