@@ -3,11 +3,12 @@
 # Copyright (c) 2017, ROBOTIS CO., LTD.
 
 echo ""
-echo "[Note: Target OS version  >>> Ubuntu 16.04.x (xenial) or Linux Mint 18.x]"
-echo "[Note: Target ROS version >>> ROS Kinetic Kame]"
-echo "[Note: Catkin workspace   >>> ~/catkin_ws]"
+echo "[Note] Target OS version  >>> Ubuntu 16.04.x (xenial) or Linux Mint 18.x"
+echo "[Note] Target ROS version >>> ROS Kinetic Kame"
+echo "[Note] Catkin workspace   >>> ~/catkin_ws"
 echo ""
-echo "PRESS [ENTER] TO CONTINUE"
+echo "PRESS [ENTER] TO CONTINUE THE INSTALLATION"
+echo "IF YOU WANT TO CANCEL, PRESS [CTRL] + [C]"
 read
 
 echo "[Set the target OS, ROS version and name of catkin workspace]"
@@ -29,7 +30,7 @@ if [ ! -e /etc/apt/sources.list.d/ros-latest.list ]; then
 fi
 
 echo "[Download the ROS keys]"
-roskey=`apt-key list | grep "ROS builder"`
+roskey=`apt-key list | grep "ROS Builder"`
 if [ -z "$roskey" ]; then
   sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
 fi
@@ -41,10 +42,12 @@ sudo apt-get upgrade -y
 echo "[Install the ros-desktop-full and all rqt plugin]"
 sudo apt-get install -y ros-$name_ros_version-desktop-full ros-$name_ros_version-rqt-*
 
-echo "[rosdep init and python-rosinstall]"
+echo "[Initialize rosdep]"
 sudo sh -c "rosdep init"
 rosdep update
-. /opt/ros/$name_ros_version/setup.sh
+
+echo "[Environment setup and getting rosinstall]"
+source /opt/ros/$name_ros_version/setup.sh
 sudo apt-get install -y python-rosinstall
 
 echo "[Make the catkin workspace and test the catkin_make]"
