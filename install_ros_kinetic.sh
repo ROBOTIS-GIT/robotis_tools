@@ -20,9 +20,10 @@ echo "[Update the package lists and upgrade them]"
 sudo apt-get update -y
 sudo apt-get upgrade -y
 
-echo "[Install the chrony, ntpdate and set the ntpdate]"
-sudo apt-get install -y chrony ntpdate
+echo "[Install build enviroment, the chrony, ntpdate and set the ntpdate]"
+sudo apt-get install -y chrony ntpdate build-essential
 sudo ntpdate ntp.ubuntu.com
+
 
 echo "[Add the ROS repository]"
 if [ ! -e /etc/apt/sources.list.d/ros-latest.list ]; then
