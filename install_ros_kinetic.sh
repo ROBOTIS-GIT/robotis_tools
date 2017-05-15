@@ -20,7 +20,7 @@ echo "[Update the package lists and upgrade them]"
 sudo apt-get update -y
 sudo apt-get upgrade -y
 
-echo "[Install build enviroment, the chrony, ntpdate and set the ntpdate]"
+echo "[Install build environment, the chrony, ntpdate and set the ntpdate]"
 sudo apt-get install -y chrony ntpdate build-essential
 sudo ntpdate ntp.ubuntu.com
 
@@ -72,6 +72,8 @@ sh -c "echo \"source ~/$name_catkin_workspace/devel/setup.bash\" >> ~/.bashrc"
 
 sh -c "echo \"export ROS_MASTER_URI=http://localhost:11311\" >> ~/.bashrc"
 sh -c "echo \"export ROS_HOSTNAME=localhost\" >> ~/.bashrc"
+
+source ~/.bashrc
 
 echo "[Complete!!!]"
 exit 0
