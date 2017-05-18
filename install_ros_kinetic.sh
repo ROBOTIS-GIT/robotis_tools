@@ -5,7 +5,7 @@
 echo ""
 echo "[Note] Target OS version  >>> Ubuntu 16.04.x (xenial) or Linux Mint 18.x"
 echo "[Note] Target ROS version >>> ROS Kinetic Kame"
-echo "[Note] Catkin workspace   >>> ~/catkin_ws"
+echo "[Note] Catkin workspace   >>> $HOME/catkin_ws"
 echo ""
 echo "PRESS [ENTER] TO CONTINUE THE INSTALLATION"
 echo "IF YOU WANT TO CANCEL, PRESS [CTRL] + [C]"
@@ -61,10 +61,10 @@ source /opt/ros/$name_ros_version/setup.sh
 sudo apt-get install -y python-rosinstall
 
 echo "[Make the catkin workspace and test the catkin_make]"
-mkdir -p ~/$name_catkin_workspace/src
-cd ~/$name_catkin_workspace/src
+mkdir -p $HOME/$name_catkin_workspace/src
+cd $HOME/$name_catkin_workspace/src
 catkin_init_workspace
-cd ~/$name_catkin_workspace
+cd $HOME/$name_catkin_workspace
 catkin_make
 
 echo "[Set the ROS evironment]"
@@ -82,7 +82,7 @@ sh -c "echo \"source ~/$name_catkin_workspace/devel/setup.bash\" >> ~/.bashrc"
 sh -c "echo \"export ROS_MASTER_URI=http://localhost:11311\" >> ~/.bashrc"
 sh -c "echo \"export ROS_HOSTNAME=localhost\" >> ~/.bashrc"
 
-source ~/.bashrc
+source $HOME/.bashrc
 
 echo "[Complete!!!]"
 exit 0
