@@ -36,6 +36,15 @@ if [ -z "$roskey" ]; then
   sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
 fi
 
+echo "[Check the ROS keys]"
+roskey=`apt-key list | grep "ROS Builder"`
+if [ -n "$roskey" ]; then
+  echo "[ROS key exists in the list]"
+else
+  echo "[Failed to receive the ROS key, aborts the installation]"
+  exit 0
+fi
+
 echo "[Update the package lists and upgrade them]"
 sudo apt-get update -y
 sudo apt-get upgrade -y
