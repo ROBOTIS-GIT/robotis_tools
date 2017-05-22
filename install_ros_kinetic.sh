@@ -49,8 +49,8 @@ echo "[Update the package lists and upgrade them]"
 sudo apt-get update -y
 sudo apt-get upgrade -y
 
-echo "[Install the ros-desktop-full and all rqt plugin]"
-sudo apt-get install -y ros-$name_ros_version-desktop-full ros-$name_ros_version-rqt-*
+echo "[Install the ros-desktop-full, all rqt plugin and so on]"
+sudo apt-get install -y ros-$name_ros_version-desktop-full ros-$name_ros_version-rqt-* gedit
 
 echo "[Initialize rosdep]"
 sudo sh -c "rosdep init"
