@@ -49,8 +49,8 @@ echo "[Update the package lists and upgrade them]"
 sudo apt-get update -y
 sudo apt-get upgrade -y
 
-echo "[Install the ros-desktop and gedit]"
-sudo apt-get install -y ros-$name_ros_version-desktop gedit
+echo "[Install the ros-base and gedit]"
+sudo apt-get install -y ros-$name_ros_version-ros-base gedit
 
 echo "[Initialize rosdep]"
 sudo sh -c "rosdep init"
