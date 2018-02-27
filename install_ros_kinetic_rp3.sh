@@ -3,7 +3,7 @@
 # Copyright (c) 2017, ROBOTIS CO., LTD.
 
 echo ""
-echo "[Note] Target OS version  >>> Ubuntu 16.04.x (xenial) or Linux Mint 18.x"
+echo "[Note] Target OS version  >>> Ubuntu Mate for the Raspberry Pi"
 echo "[Note] Target ROS version >>> ROS Kinetic Kame"
 echo "[Note] Catkin workspace   >>> $HOME/catkin_ws"
 echo ""
@@ -23,7 +23,6 @@ sudo apt-get upgrade -y
 echo "[Install build environment, the chrony, ntpdate and set the ntpdate]"
 sudo apt-get install -y chrony ntpdate build-essential
 sudo ntpdate ntp.ubuntu.com
-
 
 echo "[Add the ROS repository]"
 if [ ! -e /etc/apt/sources.list.d/ros-latest.list ]; then
@@ -49,8 +48,8 @@ echo "[Update the package lists and upgrade them]"
 sudo apt-get update -y
 sudo apt-get upgrade -y
 
-echo "[Install the ros-base and gedit]"
-sudo apt-get install -y ros-$name_ros_version-ros-base gedit
+echo "[Install the ros-base]"
+sudo apt-get install -y ros-$name_ros_version-ros-base
 
 echo "[Initialize rosdep]"
 sudo sh -c "rosdep init"
@@ -68,7 +67,7 @@ cd $HOME/$name_catkin_workspace
 catkin_make
 
 echo "[Set the ROS evironment]"
-sh -c "echo \"alias eb='gedit ~/.bashrc'\" >> ~/.bashrc"
+sh -c "echo \"alias eb='nano ~/.bashrc'\" >> ~/.bashrc"
 sh -c "echo \"alias sb='source ~/.bashrc'\" >> ~/.bashrc"
 sh -c "echo \"alias gs='git status'\" >> ~/.bashrc"
 sh -c "echo \"alias gp='git pull'\" >> ~/.bashrc"

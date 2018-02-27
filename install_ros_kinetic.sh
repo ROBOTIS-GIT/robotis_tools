@@ -24,7 +24,6 @@ echo "[Install build environment, the chrony, ntpdate and set the ntpdate]"
 sudo apt-get install -y chrony ntpdate build-essential
 sudo ntpdate ntp.ubuntu.com
 
-
 echo "[Add the ROS repository]"
 if [ ! -e /etc/apt/sources.list.d/ros-latest.list ]; then
   sudo sh -c "echo \"deb http://packages.ros.org/ros/ubuntu ${name_os_version} main\" > /etc/apt/sources.list.d/ros-latest.list"
@@ -49,8 +48,8 @@ echo "[Update the package lists and upgrade them]"
 sudo apt-get update -y
 sudo apt-get upgrade -y
 
-echo "[Install the ros-desktop-full, all rqt plugin and so on]"
-sudo apt-get install -y ros-$name_ros_version-desktop-full ros-$name_ros_version-rqt-* gedit
+echo "[Install the ros-desktop-full and all rqt plugins]"
+sudo apt-get install -y ros-$name_ros_version-desktop-full ros-$name_ros_version-rqt-*
 
 echo "[Initialize rosdep]"
 sudo sh -c "rosdep init"
@@ -68,7 +67,7 @@ cd $HOME/$name_catkin_workspace
 catkin_make
 
 echo "[Set the ROS evironment]"
-sh -c "echo \"alias eb='gedit ~/.bashrc'\" >> ~/.bashrc"
+sh -c "echo \"alias eb='nano ~/.bashrc'\" >> ~/.bashrc"
 sh -c "echo \"alias sb='source ~/.bashrc'\" >> ~/.bashrc"
 sh -c "echo \"alias gs='git status'\" >> ~/.bashrc"
 sh -c "echo \"alias gp='git pull'\" >> ~/.bashrc"
