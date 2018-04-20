@@ -1,0 +1,8 @@
+- git: {local-name: dynamixel_sdk, uri: 'git@github.com:ROBOTIS-GIT/DynamixelSDK.git'}
+- git: {local-name: turtlebot3, uri: 'https://github.com/ROBOTIS-GIT/turtlebot3'}
+- git: {local-name: turtlebot3_msgs, uri: 'https://github.com/ROBOTIS-GIT/turtlebot3_msgs'}
+- git: {local-name: turtlebot3_simulations, uri: 'https://github.com/ROBOTIS-GIT/turtlebot3_simulations'}
+- git: {local-name: turtlebot3_applications, uri: 'https://github.com/ROBOTIS-GIT/turtlebot3_applications'}
+- git: {local-name: turtlebot3_autorace, uri: 'https://github.com/ROBOTIS-GIT/turtlebot3_autorace'}
+- git: {local-name: turtlebot3_deliver, uri: 'https://github.com/ROBOTIS-GIT/turtlebot3_deliver'}
+- git: {local-name: hls_lfcd_lds_driver, uri: 'https://github.com/ROBOTIS-GIT/hls_lfcd_lds_driver'}
