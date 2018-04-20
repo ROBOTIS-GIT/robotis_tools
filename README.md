@@ -29,6 +29,8 @@ $ wget https://raw.githubusercontent.com/ROBOTIS-GIT/robotis_tools/master/instal
 ```sh
 (Move to your catkin workspace)
 $ cd ~/catkin_ws/src/
+$ rm .rosinstall
+$ wstool init
 
 (Select the robot you want to use)
 $ wstool merge https://raw.githubusercontent.com/ROBOTIS-GIT/robotis_tools/master/.all.rosinstall (for all)
