@@ -77,3 +77,7 @@ sudo apt-get install ros-melodic-rqt-common-plugins ros-melodic-rqt-robot-plugin
 ```sh
 sudo apt-get install ros-melodic-angles ros-melodic-common-tutorials ros-melodic-geometry-tutorials ros-melodic-ros-tutorials ros-melodic-roslint ros-melodic-visualization-tutorials
 ```
+
+# Reference Information
+- http://www.ros.org/reps/rep-0142.html
+- https://github.com/ros/metapackages
