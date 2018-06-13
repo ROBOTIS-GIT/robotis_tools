@@ -1,3 +1,3 @@
-- git: {local-name: dynamixel_sdk, uri: 'git@github.com:ROBOTIS-GIT/DynamixelSDK.git'}
-- git: {local-name: dynamixel_workbench, uri: 'git@github.com:ROBOTIS-GIT/dynamixel-workbench.git'}
-- git: {local-name: dynamixel_workbench_msgs, uri: 'git@github.com:ROBOTIS-GIT/dynamixel-workbench-msgs.git'}
+- git: {local-name: dynamixel_sdk, uri: 'https://github.com/ROBOTIS-GIT/DynamixelSDK.git'}
+- git: {local-name: dynamixel_workbench, uri: 'https://github.com/ROBOTIS-GIT/dynamixel-workbench.git'}
+- git: {local-name: dynamixel_workbench_msgs, uri: 'https://github.com/ROBOTIS-GIT/dynamixel-workbench-msgs.git'}
