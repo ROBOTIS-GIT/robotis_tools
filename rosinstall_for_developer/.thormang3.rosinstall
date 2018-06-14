@@ -1,0 +1,12 @@
+- git: {local-name: dynamixel_sdk, uri: 'git@github.com:ROBOTIS-GIT/DynamixelSDK.git'}
+- git: {local-name: robotis_framework, uri: 'git@github.com:ROBOTIS-GIT/ROBOTIS-Framework.git'}
+- git: {local-name: robotis_controller_msgs, uri: 'git@github.com:ROBOTIS-GIT/ROBOTIS-Framework-msgs.git'}
+- git: {local-name: robotis_math, uri: 'git@github.com:ROBOTIS-GIT/ROBOTIS-Math.git'}
+- git: {local-name: robotis_utility, uri: 'git@github.com:ROBOTIS-GIT/ROBOTIS-Utility.git'}
+- git: {local-name: thormang3_msgs, uri: 'git@github.com:ROBOTIS-GIT/ROBOTIS-THORMANG-msgs.git'}
+- git: {local-name: thormang3_common, uri: 'git@github.com:ROBOTIS-GIT/ROBOTIS-THORMANG-Common.git'}
+- git: {local-name: thormang3_mpc, uri: 'git@github.com:ROBOTIS-GIT/ROBOTIS-THORMANG-MPC.git'}
+- git: {local-name: thormang3_mpc_sensors, uri: 'git@github.com:ROBOTIS-GIT/ROBOTIS-THORMANG-MPC-SENSORs.git'}
+- git: {local-name: thormang3_ppc, uri: 'git@github.com:ROBOTIS-GIT/ROBOTIS-THORMANG-PPC.git'}
+- git: {local-name: thormang3_opc, uri: 'git@github.com:ROBOTIS-GIT/ROBOTIS-THORMANG-OPC.git'}
+- git: {local-name: thormang3_tools, uri: 'git@github.com:ROBOTIS-GIT/ROBOTIS-THORMANG-Tools.git'}
