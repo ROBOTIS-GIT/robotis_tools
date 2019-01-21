@@ -17,11 +17,11 @@ name_ros_version=${name_ros_version:="melodic"}
 name_catkin_workspace=${name_catkin_workspace:="catkin_ws"}
 
 echo "[Update the package lists and upgrade them]"
-sudo apt-get update -y
-sudo apt-get upgrade -y
+sudo apt update -y
+sudo apt upgrade -y
 
 echo "[Install build environment, the chrony, ntpdate and set the ntpdate]"
-sudo apt-get install -y chrony ntpdate build-essential
+sudo apt install -y chrony ntpdate build-essential
 sudo ntpdate ntp.ubuntu.com
 
 echo "[Add the ROS repository]"
@@ -45,11 +45,11 @@ else
 fi
 
 echo "[Update the package lists and upgrade them]"
-sudo apt-get update -y
-sudo apt-get upgrade -y
+sudo apt update -y
+sudo apt upgrade -y
 
 echo "[Install the ros-desktop-full and all rqt plugins]"
-sudo apt-get install -y ros-$name_ros_version-desktop-full ros-$name_ros_version-rqt-*
+sudo apt install -y ros-$name_ros_version-desktop-full ros-$name_ros_version-rqt-*
 
 echo "[Initialize rosdep]"
 sudo sh -c "rosdep init"
@@ -57,7 +57,7 @@ rosdep update
 
 echo "[Environment setup and getting rosinstall]"
 source /opt/ros/$name_ros_version/setup.sh
-sudo apt-get install -y python-rosinstall python-rosinstall-generator python-wstool
+sudo apt install -y python-rosinstall python-rosinstall-generator python-wstool
 
 echo "[Make the catkin workspace and test the catkin_make]"
 mkdir -p $HOME/$name_catkin_workspace/src
