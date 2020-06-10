@@ -50,7 +50,7 @@ sh -c "echo \"alias cb='cd ~/$name_colcon_workspace && colcon build --symlink-in
 sh -c "echo \"source /opt/ros/$name_ros_version/setup.bash\" >> ~/.bashrc"
 sh -c "echo \"source ~/$name_colcon_workspace/install/local_setup.bash\" >> ~/.bashrc"
 
-source $HOME/.bashrc
+exec bash
 
 echo "[Complete!!!]"
 exit 0
