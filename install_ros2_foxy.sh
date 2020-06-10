@@ -26,7 +26,7 @@ curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo ap
 sudo sh -c 'echo "deb http://packages.ros.org/ros2/ubuntu `lsb_release -cs` main" > /etc/apt/sources.list.d/ros2-latest.list'
 
 echo "[Install ROS 2 packages]"
-sudo apt update && sudo apt install -y ros-foxy-desktop
+sudo apt update && sudo apt install -y ros-$name_ros_version-desktop
 
 echo "[Environment setup]"
 source /opt/ros/$name_ros_version/setup.sh
