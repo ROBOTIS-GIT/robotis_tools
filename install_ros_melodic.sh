@@ -57,7 +57,7 @@ rosdep update
 
 echo "[Environment setup and getting rosinstall]"
 source /opt/ros/$name_ros_version/setup.sh
-sudo apt install -y python-rosinstall python-rosinstall-generator python-wstool
+sudo apt install -y python-rosinstall python-rosinstall-generator python-wstool git
 
 echo "[Make the catkin workspace and test the catkin_make]"
 mkdir -p $HOME/$name_catkin_workspace/src

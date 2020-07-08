@@ -30,7 +30,7 @@ sudo apt update && sudo apt install -y ros-$name_ros_version-desktop
 
 echo "[Environment setup]"
 source /opt/ros/$name_ros_version/setup.sh
-sudo apt install -y python3-argcomplete python3-colcon-common-extensions python3-vcstool
+sudo apt install -y python3-argcomplete python3-colcon-common-extensions python3-vcstool git
 
 echo "[Make the colcon workspace and test colcon build]"
 mkdir -p $HOME/$name_colcon_workspace/src
