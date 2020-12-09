@@ -54,8 +54,8 @@ sudo apt-get install -y ros-$name_ros_version-ros-base
 echo "[Environment setup and getting rosinstall]"
 source /opt/ros/$name_ros_version/setup.sh
 
-echo "[Setup 1GB Swap Partition]"
-sudo fallocate -l 1G /swapfile
+echo "[Setup 2GB Swap Partition]"
+sudo fallocate -l 2G /swapfile
 sudo chmod 600 /swapfile
 sudo mkswap /swapfile
 sudo swapon /swapfile
