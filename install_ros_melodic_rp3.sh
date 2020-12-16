@@ -59,6 +59,13 @@ echo "[Environment setup and getting rosinstall]"
 source /opt/ros/$name_ros_version/setup.sh
 sudo apt-get install -y python-rosinstall git
 
+echo "[Setup 2GB Swap Partition]"
+sudo fallocate -l 2G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+sh -c "echo \"/swapfile swap swap defaults 0 0\" >> /etc/fstab"
+
 echo "[Make the catkin workspace and test the catkin_make]"
 mkdir -p $HOME/$name_catkin_workspace/src
 cd $HOME/$name_catkin_workspace/src
