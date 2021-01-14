@@ -39,9 +39,11 @@ fi
 echo "[Update the package lists and upgrade them]"
 sudo apt update -y
 
-echo "[Install the ros-desktop-full and all rqt plugins]"
+echo "[Install ros-desktop-full version of Noetic"
 sudo apt install -y ros-$name_ros_version-desktop-full
-sudo apt-get install -y ros-$name_ros_version-rqt-*
+
+echo "[Install RQT & Gazebo"
+sudo apt-get install -y ros-$name_ros_version-rqt-* ros-$name_ros_version-gazebo-*
 
 echo "[Environment setup and getting rosinstall]"
 source /opt/ros/$name_ros_version/setup.sh
@@ -75,7 +77,7 @@ sh -c "echo \"export ROS_HOSTNAME=localhost\" >> ~/.bashrc"
 source $HOME/.bashrc
 
 echo "[Install build environment, the chrony, ntpdate and set the ntpdate]"
-sudo apt install -y chrony ntpdate build-essential
+sudo apt install -y git chrony ntpdate build-essential
 sudo ntpdate ntp.ubuntu.com
 
 echo "[Complete!!!]"
