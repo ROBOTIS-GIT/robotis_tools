@@ -51,6 +51,10 @@ sudo apt-get upgrade -y
 echo "[Install the ros-base]"
 sudo apt-get install -y ros-$name_ros_version-ros-base
 
+echo "[Initialize rosdep]"
+sudo sh -c "rosdep init"
+rosdep update
+
 echo "[Environment setup and getting rosinstall]"
 source /opt/ros/$name_ros_version/setup.sh
 
