@@ -3,7 +3,7 @@
 # Copyright (c) 2020, ROBOTIS CO., LTD.
 
 echo ""
-echo "[Note] OS version  >>> Ubuntu 20.04 (Focal Fossa)"
+echo "[Note] Target OS version  >>> Ubuntu 20.04 (Focal Fossa)"
 echo "[Note] Target ROS version >>> ROS 2 Foxy Fitzroy"
 echo "[Note] Colcon workspace   >>> $HOME/colcon_ws"
 echo ""

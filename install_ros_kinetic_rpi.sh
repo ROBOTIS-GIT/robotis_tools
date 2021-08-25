@@ -3,7 +3,7 @@
 # Copyright (c) 2017, ROBOTIS CO., LTD.
 
 echo ""
-echo "[Note] Target OS version  >>> Ubuntu Mate for the Raspberry Pi"
+echo "[Note] Target OS version  >>> Ubuntu for the Raspberry Pi"
 echo "[Note] Target ROS version >>> ROS Kinetic Kame"
 echo "[Note] Catkin workspace   >>> $HOME/catkin_ws"
 echo ""
