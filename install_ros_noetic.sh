@@ -16,6 +16,13 @@ name_os_version=${name_os_version:="focal"}
 name_ros_version=${name_ros_version:="noetic"}
 name_catkin_workspace=${name_catkin_workspace:="catkin_ws"}
 
+echo "[Update the package lists]"
+sudo apt update -y
+
+echo "[Install build environment, the chrony, ntpdate and set the ntpdate]"
+sudo apt install -y chrony ntpdate curl build-essential
+sudo ntpdate ntp.ubuntu.com
+
 echo "[Add the ROS repository]"
 if [ ! -e /etc/apt/sources.list.d/ros-latest.list ]; then
   sudo sh -c "echo \"deb http://packages.ros.org/ros/ubuntu ${name_os_version} main\" > /etc/apt/sources.list.d/ros-latest.list"
@@ -36,20 +43,24 @@ else
   exit 0
 fi
 
-echo "[Update the package lists and upgrade them]"
+echo "[Update the package lists]"
 sudo apt update -y
 
 echo "[Install ros-desktop-full version of Noetic"
 sudo apt install -y ros-$name_ros_version-desktop-full
 
-echo "[Install RQT & Gazebo"
-sudo apt-get install -y ros-$name_ros_version-rqt-* ros-$name_ros_version-gazebo-*
+echo "[Install RQT & Gazebo]"
+sudo apt install -y ros-$name_ros_version-rqt-* ros-$name_ros_version-gazebo-*
 
 echo "[Environment setup and getting rosinstall]"
 source /opt/ros/$name_ros_version/setup.sh
+sudo apt install -y python3-rosinstall python3-rosinstall-generator python3-wstool build-essential git
 
 echo "[Install rosdep and Update]"
-sudo apt install python3-rosdep2
+sudo apt install python3-rosdep
+
+echo "[Initialize rosdep and Update]"
+sudo sh -c "rosdep init"
 rosdep update
 
 echo "[Make the catkin workspace and test the catkin_make]"
@@ -75,10 +86,6 @@ sh -c "echo \"export ROS_MASTER_URI=http://localhost:11311\" >> ~/.bashrc"
 sh -c "echo \"export ROS_HOSTNAME=localhost\" >> ~/.bashrc"
 
 source $HOME/.bashrc
-
-echo "[Install build environment, the chrony, ntpdate and set the ntpdate]"
-sudo apt install -y git chrony ntpdate build-essential
-sudo ntpdate ntp.ubuntu.com
 
 echo "[Complete!!!]"
 exit 0

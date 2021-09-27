@@ -16,12 +16,11 @@ name_os_version=${name_os_version:="xenial"}
 name_ros_version=${name_ros_version:="kinetic"}
 name_catkin_workspace=${name_catkin_workspace:="catkin_ws"}
 
-echo "[Update the package lists and upgrade them]"
+echo "[Update the package lists]"
 sudo apt-get update -y
-sudo apt-get upgrade -y
 
 echo "[Install build environment, the chrony, ntpdate and set the ntpdate]"
-sudo apt-get install -y chrony ntpdate build-essential
+sudo apt-get install -y chrony ntpdate curl build-essential git
 sudo ntpdate ntp.ubuntu.com
 
 echo "[Add the ROS repository]"
@@ -44,20 +43,22 @@ else
   exit 0
 fi
 
-echo "[Update the package lists and upgrade them]"
+echo "[Update the package lists]"
 sudo apt-get update -y
-sudo apt-get upgrade -y
 
 echo "[Install the ros-base]"
 sudo apt-get install -y ros-$name_ros_version-ros-base
 
-echo "[Initialize rosdep]"
+echo "[Install rosdep]"
+sudo apt install python-rosdep
+
+echo "[Initialize rosdep and Update]"
 sudo sh -c "rosdep init"
 rosdep update
 
 echo "[Environment setup and getting rosinstall]"
 source /opt/ros/$name_ros_version/setup.sh
-sudo apt-get install -y python-rosinstall git
+sudo apt-get install -y python-rosinstall
 
 echo "[Make the catkin workspace and test the catkin_make]"
 mkdir -p $HOME/$name_catkin_workspace/src
